@@ -11,28 +11,35 @@ article {
 }
 
 // ==========================================
+//   ФОНОВОЕ ИЗОБРАЖЕНИЕ (исправленный путь)
+// ==========================================
+body {
+  background-image: url('/content/images/background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #1a242b;
+}
+
+// ==========================================
 //   КОД ДЛЯ ЦЕНТРИРОВАНИЯ ТАБЛИЦЫ
 // ==========================================
 table {
-  display: table !important;        // Возвращаем стандартное табличное отображение
-  width: auto !important;           // Таблица сжимается до реального размера контента (нужно для центрирования)
-  
-  // Магия выравнивания по центру (автоматические отступы слева и справа):
+  display: table !important;
+  width: auto !important;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 2rem !important;
   margin-bottom: 2rem !important;
-
   border-collapse: collapse;
 }
 
 th, td {
-  white-space: nowrap !important;   // Запрещаем тексту уродливо переноситься по одной букве
-  padding: 0.6rem 1.8rem !important; // Делаем красивые просторные ячейки
-  text-align: left;                 // Текст внутри ячеек выравниваем по левому краю
+  white-space: nowrap !important;
+  padding: 0.6rem 1.8rem !important;
+  text-align: left;
 }
 
-// Добавляем легкое разделение строк, чтобы таблица выглядела аккуратно
 tr {
   border-bottom: 1px solid var(--lightgray);
   &:last-child {
@@ -50,15 +57,14 @@ th {
 img {
   max-width: 100% !important;
   height: auto !important;
-  display: inline-block;           // Позволяет тексту вставать рядом с картинкой
-  float: left;                     // Силой прижимает картинку к левому краю
-  margin-left: 0 !important;       // Убираем центрирование слева
-  margin-right: 1.5rem !important; // Создает красивый отступ справа от картинки до текста
-  margin-top: 0.5rem !important;   
-  margin-bottom: 1rem !important;  // Отступ снизу, чтобы текст под картинкой не прилипал
+  display: inline-block;
+  float: left;
+  margin-left: 0 !important;
+  margin-right: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1rem !important;
 }
 
-// Сброс обтекания: гарантирует, что крупные блоки, идущие ПОСЛЕ статьи/абзаца, не уедут наверх
 article::after, p::after {
   content: "";
   display: table;
